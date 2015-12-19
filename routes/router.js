@@ -9,6 +9,7 @@ Router.route('/', function () {
 
 Router.route('/jankenpo/:_id', function() {
   if (Meteor.user()) {
+    Session.set('room', this.params._id);
     this.render('gameRoom', {
       data: function() {
         return Rooms.findOne({"_id": this.params._id});
