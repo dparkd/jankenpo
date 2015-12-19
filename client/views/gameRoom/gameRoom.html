@@ -1,0 +1,26 @@
+<template name="gameRoom">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{game.room.name}}</h1>
+
+      {{#if ready}}
+        <h2>{{pOne.username}} vs {{pTwo.username}}</h2>
+      {{else}}
+        <h2>We are waiting for another player</h2>
+        <p>Share the game at: localhost:3000/jankenpo/{{game._id}}</p>
+      {{/if}}
+      
+    </div>
+  </div>
+  
+  {{#if ready}}
+  <div class="row">
+    <div class="col-md-12">
+      <a class="btn btn-default" data-value="rock">Rock</a>
+      <a class="btn btn-default" data-value="paper">Paper</a>
+      <a class="btn btn-default" data-value="scissors">Scissors</a>
+    </div>
+  </div>
+  {{/if}}
+</template>
